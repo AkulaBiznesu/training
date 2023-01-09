@@ -1,23 +1,19 @@
 import random
 l = ["O", "P"]
-k = [0, 1, 0]
-n = 0
+k = []
+count = 0
 s = 10
 while s:
     x = random.randint(0, 1)
     k.append(x)
-    for i in range(len(k)):
-        if i + k[i+2]== 0:
-            n += 1
+    for i in range(len(k)-2):
+        if k[i] + k[i+2] == 0:
             print("O")
-            s-=1
             print(k)
-        elif i + k[i+2] == 3:
-            n += 1
+        elif k[i] + k[i+2] == 2:
             print("P")
-            s-=1
             print(k)
-    
+            s-=1
 
 
 
